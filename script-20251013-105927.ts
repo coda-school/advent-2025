@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function(): void {
     setupModal();
 });
 
+document.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+        const portalOverlay: HTMLElement | null = document.getElementById('portal-overlay');
+        if (portalOverlay?.classList.contains('portal-active')) {
+            closeVideo();
+        }
+    }
+});
+
 function setupCalendar(): void {
     const calendar = document.getElementById('calendar');
     if (!calendar) return;
@@ -104,4 +113,66 @@ function closeModal(): void {
 
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
+}
+
+const konamiCode: string[] = [
+    'ArrowUp', 'ArrowUp',
+    'ArrowDown', 'ArrowDown',
+    'ArrowLeft', 'ArrowRight',
+    'ArrowLeft', 'ArrowRight',
+    'b', 'a'
+];
+
+let konamiIndex: number = 0;
+const videoIframe = document.getElementById('konami-video') as HTMLIFrameElement;
+const originalVideoSrc: string | null = videoIframe?.getAttribute('data-video-url');
+
+document.addEventListener('keydown', (e: KeyboardEvent) => {
+    let key: string = e.key;
+    switch (e.key.toLowerCase()) {
+        case 'arrowup': key = 'ArrowUp'; break;
+        case 'arrowdown': key = 'ArrowDown'; break;
+        case 'arrowleft': key = 'ArrowLeft'; break;
+        case 'arrowright': key = 'ArrowRight'; break;
+        default: key = e.key.toLowerCase();
+    }
+
+    if (key !== konamiCode[konamiIndex]) {
+        konamiIndex = 0;
+    } else {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            activateVideo();
+            konamiIndex = 0;
+        }
+    }
+});
+
+function activateVideo(): void {
+    document.body.classList.add('portal-open');
+    const portalOverlay: HTMLElement | null = document.getElementById('portal-overlay');
+    if (portalOverlay) {
+        portalOverlay.classList.remove('portal-hidden');
+        portalOverlay.classList.add('portal-active');
+    }
+    if (videoIframe && originalVideoSrc) {
+        videoIframe.src = originalVideoSrc;
+    }
+}
+
+function closeVideo(): void {
+    const portalOverlay: HTMLElement | null = document.getElementById('portal-overlay');
+    if (portalOverlay) {
+        document.body.classList.remove('portal-open');
+        document.body.classList.add('portal-closing');
+        portalOverlay.classList.add('portal-closing');
+        setTimeout(() => {
+            portalOverlay.classList.remove('portal-active', 'portal-closing');
+            portalOverlay.classList.add('portal-hidden');
+            document.body.classList.remove('portal-closing');
+            if (videoIframe) {
+                videoIframe.src = '';
+            }
+        }, 500);
+    }
 }
