@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "day": 1,
+    "title": "Jour 1 — Un curieux message",
+    "htmlContent": "<p>Ce matin, tu as reçu un message inattendu.</p>\n<p>L’expéditeur ? <strong>Le Père Noël en personne.</strong></p>\n<p>Enfin… c’est ce que laisse penser l’en-tête de l’email : <code>noel@santaops.np</code>.</p>\n<p>Le problème, c’est que le contenu du message est illisible. Une série de lettres étranges, précédée d’une petite énigme.</p>\n<p>Tu comprends vite que ce n’est pas un simple bug d’encodage : <strong>c’est un message chiffré.</strong></p>\n<h2>Énigme</h2>\nPour trouver la clé, recule chaque lettre du même nombre de pas. Ce nombre est égal au nombre de lettres du mot <strong>RENNE</strong>.\n<p><details><summary>Spoiler</summary>\n  <pre>\n    Indice : il s’agit d’un chiffre de César — chaque lettre du message a été décalée du même nombre de positions.\n  </pre>\n</details></p>\n<h2>Message chiffré</h2>\n<pre><code class=\"language-\">qjx uwjufwfynkx uwjssjsy iz wjyfwi qjx jqkjx xtsy ijgtwijx jy qf qtlnxynvzj iz ywfnsjfz jxy js ufssj. \nqj ujwj stjq hmjwhmj zs tz zsj ija hfufgqj ij qzn uwjyjw rfns ktwyj. \nqjx qzynsx xtsy itzjx fajh qjx otzjyx rtnsx fajh qj htij. \nfajh hjyyj wjxtqzynts yz fx uwtzaj yf afqjzw jy jrgfwvzj ifsx hjyyj fajsyzwj !!!</code></pre>\n<h2>Ta mission</h2>\n<ul><li><strong>Déchiffre</strong> le message (manuellement, sans coder).</li>\n<li>Trouve le <strong>texte en clair</strong> en français.</li></ul>\nBonne chance à toi.\nTa mission commence maintenant.",
+    "hasAssets": false,
+    "hasSrcFolder": false
+  }
+]

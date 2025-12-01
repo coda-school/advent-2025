@@ -3,7 +3,7 @@
     <img src="https://bff.ecoindex.fr/badge/?theme=dark&url=https://coda-school.github.io/advent-2025/" alt="Ecoindex Badge" />
 </a>
 
-[![Our Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/rcMqX7UEGy)
+[![Our Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/4wMhNGu69T)
 
 [![pages-build-deployment](https://github.com/coda-school/advent-2025/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/coda-school/advent-2025/actions/workflows/pages/pages-build-deployment)
 
